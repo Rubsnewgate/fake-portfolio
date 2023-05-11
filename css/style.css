@@ -20,10 +20,12 @@ body {
 .nav {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    height: 5rem;
     background: #252524;
     box-shadow: 0 2px rgba(0, 0, 0, 0.4);
     z-index: 10;
@@ -36,17 +38,8 @@ body {
 
 .nav-list a {
     display: block;
-    font-size: 2.2rem;
+    font-size: 1.2rem;
     padding: 2rem;
-}
-
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: white;
 }
 
 .welcome-section {
@@ -61,7 +54,7 @@ a {
 
 .welcome-section > p {
     font-size: 3rem;
-    font-weight: 100;
+    font-weight: 200;
     font-style: italic;
     color: #252524;
 }
@@ -106,7 +99,7 @@ a {
 }
 
 .btn-show-all {
-    font-size: 2rem;
+    font-size: 1.5rem;
     background: #545555;
     transition: background 0.3s ease-out;
 }
@@ -127,6 +120,70 @@ a {
     content: "\f054";
 }
 
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+    padding: 0 2rem;
+    background: #545555;
+}
+
+.contact-section-header > h2 {
+    font-size: 3.5rem;
+}
+
+.contact-section-header > p {
+    font-style: italic;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 980px;
+    margin-top: 8rem;
+    flex-wrap: wrap;
+}
+
+.contact-details {
+    font-size: 2rem;
+    text-shadow: 2px 2px 1px #1f1f1f;
+    transition: transform 0.3s ease-out;
+}
+
+.footer-section {
+    font-weight: 100;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #252524;
+    border-top: 4px solid black;
+    padding: 2rem;
+}
+
+footer > p {
+    margin: 0.5rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
 @media (max-width: 61.25em) {
     html {
         font-size: 58%;
@@ -136,5 +193,60 @@ a {
 @media (max-width: 75em) {
     html {
         font-size: 60%;
+    }
+}
+
+@media (max-width: 28.75em) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 28.75em) {
+    .nav {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 28.75em) {
+    .nav-list {
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 28.75em) {
+    .welcome-section {
+        text-align: center;
+    }
+}
+
+@media (max-width: 30.625em) {
+    .projects-section {
+        padding: 6rem 1rem;
+    }
+}
+
+@media (max-width: 28.75em) {
+    .projects-section-header {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 30.625em) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 28.75em) {
+    .contact-section-header > h2 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 28.75em) {
+    footer {
+        flex-direction: column;
+        text-align: center;
     }
 }
