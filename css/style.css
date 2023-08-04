@@ -1,22 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
-
+/* GLOBAL STYLES */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
+html {
+    font-size: 62.5%;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 400;
+    font-family: var(--global-font);
     line-height: 1.4;
-    color: white;
+    color: var(--white);
 }
 
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+/* GLOBAL VARIABLES */
+:root {
+    /* Colors */
+    --dark-grey: #252524;
+    --light-grey: #545555;
+    --white: #ffffff;
+    /* Font */
+    --global-font: 'Poppins', sans-serif;
+    /* Font sizes */
+    --title: 5.2rem;
+    --subtitle: 4rem;
+    --paragraph: 3.6rem;
+    --paragraph-two: 2.4rem;
+    --anchor: 2.4rem;
+    --btn: 1.8rem;
+}
+
+/* NAVBAR STYLES */
 .nav {
     display: flex;
     justify-content: flex-end;
@@ -26,7 +57,7 @@ body {
     left: 0;
     width: 100%;
     height: 5rem;
-    background: #252524;
+    background: var(--dark-grey);
     box-shadow: 0 2px rgba(0, 0, 0, 0.4);
     z-index: 10;
 }
@@ -38,10 +69,11 @@ body {
 
 .nav-list a {
     display: block;
-    font-size: 1.2rem;
+    font-size: var(--anchor);
     padding: 2rem;
 }
 
+/* WELCOME SECTION */
 .welcome-section {
     display: flex;
     flex-direction: column;
@@ -49,26 +81,31 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: #545555;
+    background-color: var(--light-grey);
+}
+
+.welcome-section > h1 {
+    font-size: 5.2rem;
 }
 
 .welcome-section > p {
-    font-size: 3rem;
+    font-size: var(--paragraph);
     font-weight: 200;
     font-style: italic;
-    color: #252524;
+    color: var(--dark-grey);
 }
 
+/* PROJECTS SECTION */
 .projects-section {
     text-align: center;
     padding: 10rem 2rem;
-    background: #252524;
-
+    background: var(--dark-grey);
 }
 
 .projects-section-header {
-    max-width: 640px;
     margin: 0 auto 6rem auto;
+    max-width: 640px;
+    font-size: var(--subtitle);
     border-bottom: 0.2rem solid white;
 }
 
@@ -82,7 +119,7 @@ body {
 }
 
 .project {
-    background: #545555;
+    background: var(--light-grey);
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
 }
@@ -94,32 +131,17 @@ body {
 }
 
 .project-title {
-    font-size: 2rem;
+    font-size: var(--paragraph-two);
     padding: 2rem 0.5rem;
 }
 
 .btn-show-all {
-    font-size: 1.5rem;
-    background: #545555;
+    font-size: var(--btn);
+    background: var(--light-grey);
     transition: background 0.3s ease-out;
 }
 
-.btn-show-all > i {
-    margin-left: 10px;
-    transform: translateX(0);
-    transition: transform 0.3s ease-out;
-}
-
-.btn {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-}
-
-.fa-chevron-right:before {
-    content: "\f054";
-}
-
+/* CONTACT SECTION STYLES */
 .contact-section {
     display: flex;
     flex-direction: column;
@@ -128,15 +150,16 @@ body {
     text-align: center;
     height: 80vh;
     padding: 0 2rem;
-    background: #545555;
+    background: var(--light-grey);
 }
 
 .contact-section-header > h2 {
-    font-size: 3.5rem;
+    font-size: var(--subtitle);
 }
 
 .contact-section-header > p {
     font-style: italic;
+    font-size: var(--paragraph-two);
 }
 
 .contact-links {
@@ -154,36 +177,22 @@ body {
     transition: transform 0.3s ease-out;
 }
 
+/* FOOTER SECTION STYLES */
 .footer-section {
     font-weight: 100;
     display: flex;
     justify-content: space-evenly;
-    background-color: #252524;
+    background-color: var(--dark-grey);
     border-top: 4px solid black;
     padding: 2rem;
 }
 
 footer > p {
     margin: 0.5rem;
+    font-size: var(--paragraph-two);
 }
 
-ul {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-h1 {
-    font-size: 3.5rem;
-}
-
-h2 {
-    font-size: 2.5rem;
-}
-
+/* QUERIES */
 @media (max-width: 61.25em) {
     html {
         font-size: 58%;
@@ -200,22 +209,23 @@ h2 {
     html {
         font-size: 55%;
     }
-}
-
-@media (max-width: 28.75em) {
     .nav {
         justify-content: center;
     }
-}
-
-@media (max-width: 28.75em) {
     .nav-list {
         margin: 0 1rem;
     }
-}
-
-@media (max-width: 28.75em) {
     .welcome-section {
+        text-align: center;
+    }
+    .projects-section-header {
+        font-size: 3rem;
+    }
+    .contact-section-header > h2 {
+        font-size: 3rem;
+    }
+    footer {
+        flex-direction: column;
         text-align: center;
     }
 }
@@ -224,29 +234,7 @@ h2 {
     .projects-section {
         padding: 6rem 1rem;
     }
-}
-
-@media (max-width: 28.75em) {
-    .projects-section-header {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 30.625em) {
     .projects-grid {
         grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 28.75em) {
-    .contact-section-header > h2 {
-        font-size: 3rem;
-    }
-}
-
-@media (max-width: 28.75em) {
-    footer {
-        flex-direction: column;
-        text-align: center;
     }
 }
